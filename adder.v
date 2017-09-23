@@ -48,11 +48,12 @@ module FullAdder4bit
     FullAdder1bit adder3 (sum[3], carryout, a3, b3, carryout2);
 
     `BUF buffer(overflow, carryout);
-    
+
     initial begin
     a0 = a[0]; b0 = b[0]; carryin0 = 0;
     a1 = a[1]; b1 = b[1];
     a2 = a[2]; b2 = b[2];
     a3 = a[3]; b3 = b[3];
     end 
+    
 endmodule
