@@ -5,7 +5,6 @@
 `define AND and #50
 `define OR or #50
 `define NOT not #50
-`define XNOR xnor #50
 
 module FullAdder1bit
 (
@@ -51,6 +50,6 @@ module FullAdder4bit
     FullAdder1bit fa1 (sum[1], Cout1, a[1], b[1], Cout0);
     FullAdder1bit fa2 (sum[2], Cout2, a[2], b[2], Cout1);
     FullAdder1bit fa3 (sum[3], carryout, a[3], b[3], Cout2);
-    `XNOR computeOverflow (overflow, sum[3], carryout);
+    `XOR computeOverflow (overflow, carryout, Cout2);
 
 endmodule

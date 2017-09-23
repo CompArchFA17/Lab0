@@ -10,25 +10,26 @@ module testFullAdder4bit();
     FullAdder4bit adder (sum, carryout, overflow, a, b);
 
     initial begin
-      //$dumpfile("../resources/adder.vcd");
-      //$dumpvars;
+      $dumpfile("adder4bit.vcd");
+      $dumpvars;
 
-      $display("A    B     | Cout Sum ");
-      a=0000;b=0000; #1000;
-      $display("%b %b  | %b    %b", a, b, carryout, sum);
-      a=1000;b=0000; #1000;
-      $display("%b %b  | %b    %b", a, b, carryout, sum);
-      a=1000;b=0000; #1000;
-      $display("%b %b  | %b    %b", a, b, carryout, sum);
-      // a=1100;b=0000; #1000;
-      // $display("%b %b  | %b    %b", a, b, carryout, sum);
-      // a=0;b=0;carryin=1; #1000;
-      // $display("%b %b  %b  |  %b   %b", a, b, carryin, carryout, sum);
-      // a=1;b=0;carryin=1; #1000;
-      // $display("%b %b  %b  |  %b   %b", a, b, carryin, carryout, sum);
-      // a=0;b=1;carryin=1; #1000;
-      // $display("%b %b  %b  |  %b   %b", a, b, carryin, carryout, sum);
-      // a=1;b=1;carryin=1; #1000;
-      // $display("%b %b  %b  |  %b   %b", a, b, carryin, carryout, sum);
+      $display("A    B     | Sum  Cout Overflow ");
+      a=4'b0000;b=4'b0000; #1000;
+      $display("%b %b  | %b %b    %b", a, b, sum, carryout, overflow);
+      a=4'b0001;b=4'b0001; #1000;
+      $display("%b %b  | %b %b    %b", a, b, sum, carryout, overflow);
+      a=4'b0011;b=4'b0000; #1000;
+      $display("%b %b  | %b %b    %b", a, b, sum, carryout, overflow);
+      a=4'b0000;b=4'b0011; #10000;
+      $display("%b %b  | %b %b    %b", a, b, sum, carryout, overflow);
+      a=4'b0101;b=4'b0010; #10000;
+      $display("%b %b  | %b %b    %b", a, b, sum, carryout, overflow);
+      a=4'b0101;b=4'b0011; #10000;
+      $display("%b %b  | %b %b    %b", a, b, sum, carryout, overflow);
+      a=4'b1001;b=4'b1110; #10000;
+      $display("%b %b  | %b %b    %b", a, b, sum, carryout, overflow);
+      a=4'b1101;b=4'b1011; #10000;
+      $display("%b %b  | %b %b    %b", a, b, sum, carryout, overflow);
+      $finish;
     end
 endmodule
