@@ -9,3 +9,5 @@ Expected result: Cout=0, sum = 0011
 Result:
 
 a=1011 b=0000  | cout=0    sum=1011
+
+Cause: the least significant bit is the leftmost, we thought it was the rightmost
