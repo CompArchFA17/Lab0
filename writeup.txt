@@ -1,0 +1,34 @@
+Waveforms showing the full adder stabilizing after changing inputs. What is the worst case delay?
+
+It's evident from the graph that the delay is 200ns. The graph above shows the addition of 0011 and 0011. TODO
+
+- An explanation of your test case strategy. Why did you choose the tests you did?
+Since we didn't want to write 256 test cases, we chose 16 tests that we thought would cover all the test cases. 
+We wrote 12 test cases for testing non-overflow cases. We tested the addition of positive numbers, negative numbers, and one of each. We tested the addition of two opposite numbers to make sure their sum was 0. Everything worked as expected.
+We also wrote 4 tests to test overflow. Two of these tests were for testing the addition of two negative numbers in which case the sum was below -8, and two were for adding positive numbers where the sum was greater than 7.
+
+- A list of test case failures and the changes to your design they inspired.
+We had 3 failures on our test cases while creating our 4-bit adder:
+1) Test Case:
+a=0011;b=0000; #1000;
+Expected result: Cout=0, sum = 0011
+Result: a=1011 b=0000  | cout=0    sum=1011
+
+It turns out we were referencing our inputs as a=0011 instead of 4'b0011.
+
+2)Test Case:
+a=1000; b=1000;
+Result:
+a=1000; b=1000; Cout=1 Sum=0000
+This would seem to indicate that the left is the most significant bit. It turns out we were using [3:0] interchangably with [0:3], and these two notations reverse the direction of the least to most significant unit. Also, this once again was caused by not putting 4'b in front of our binary numbers.
+
+3) Test case:
+A    B     | Sum  Cout Overflow
+0000 0000  | 0000 0    1
+Expected result: Sum: 0000, Overflow: 0
+
+We were doing XNOR(sum[3], cout2) instead of XOR(carryout, cout2) to find the overflow.
+
+- A summary of testing performed on the FPGA board.
+
+- Summary statistics of your synthesized design from Vivado (Propagation Delay, Resources Used, etc)
