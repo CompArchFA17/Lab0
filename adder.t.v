@@ -12,7 +12,7 @@ module testFullAdder4bit();
     FullAdder4bit adder (sum, carryout, overflow, a, b);
 
     initial begin
-        $dumpfile("adder4bit.vcd");
+        $dumpfile("fulladder.vcd");
         $dumpvars(0, testFullAdder4bit);
 
 	    $display(" a  | b  |carryout|sum |Overflow Flag");            // Prints header for truth table
