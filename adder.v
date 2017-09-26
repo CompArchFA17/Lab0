@@ -1,10 +1,11 @@
 `define AND and #50
 `define OR or #50
 `define XOR xor #50
+`define NOT not #50
 
 // Adder circuit
 
-module behavioralFullAdder
+/*module behavioralFullAdder
 (
     output sum,
     output carryout,
@@ -14,9 +15,9 @@ module behavioralFullAdder
 );
     // Uses concatenation operator and built-in '+'
     assign {carryout, sum}=a+b+carryin;
-endmodule
+endmodule*/
 
-module structuralFullAdder
+module structFullAdder
 (
     output sum,
     output carryout,
@@ -48,10 +49,10 @@ module FullAdder4bit
 	wire carryout1;
 	wire carryout2;
 
-	structuralFullAdder a0(sum[0], carryout0, a[0], b[0], 1'b0);
-	structuralFullAdder a1(sum[1], carryout1, a[1], b[1], carryout0);
-	structuralFullAdder a2(sum[2], carryout2, a[2], b[2], carryout1);
-	structuralFullAdder a3(sum[3], carryout, a[3], b[3], carryout2);
+	structFullAdder a0(sum[0], carryout0, a[0], b[0], 1'b0);
+	structFullAdder a1(sum[1], carryout1, a[1], b[1], carryout0);
+	structFullAdder a2(sum[2], carryout2, a[2], b[2], carryout1);
+	structFullAdder a3(sum[3], carryout, a[3], b[3], carryout2);
 
-	`XOR (overflow, carryout2, carryout);
+  `XOR (overflow, carryout2, carryout);
 endmodule

@@ -1,34 +1,58 @@
-// Adder testbench
 `timescale 1 ns / 1 ps
 `include "adder.v"
 
-module testFullAdder();
-    reg a, b, carryin;
-    wire sum, carryout;
+module test4BitFullAdder();
+  reg[3:0] a;
+	reg[3:0] b;
+	wire[3:0] sum;
+  wire carryout;
+	wire overflow;
+  integer i;
+  integer j;
 
-    //behavioralFullAdder adder (sum, carryout, a, b, carryin);
-	structuralFullAdder adder (sum, carryout, a, b, carryin);
+	FullAdder4bit adder(sum, carryout, overflow, a, b);
 
-    initial begin
-	$dumpfile("adder.vcd");
-	$dumpvars;
+  initial begin
+  	$dumpfile("fulladder.vcd");
+  	$dumpvars(0, a[3:0], b[3:0], sum[3:0], carryout, overflow);
 
-    $display("A B CIn | Sum COut | Expected Output");
-    a=0; b=0; carryin=0; #1000
-    $display("%b  %b  %b | %b	%b  | 0 0", a, b, carryin, sum, carryout);
-    a=0; b=0; carryin=1; #1000
-    $display("%b  %b  %b | %b	%b  | 1 0", a, b, carryin, sum, carryout);
-    a=0; b=1; carryin=0; #1000
-    $display("%b  %b  %b | %b 	%b  | 1 0", a, b, carryin, sum, carryout);
-    a=0; b=1; carryin=1; #1000
-    $display("%b  %b  %b | %b 	%b  | 0 1", a, b, carryin, sum, carryout);
-    a=1; b=0; carryin=0; #1000
-    $display("%b  %b  %b | %b 	%b  | 1 0", a, b, carryin, sum, carryout);
-    a=1; b=0; carryin=1; #1000
-    $display("%b  %b  %b | %b 	%b  | 0 1", a, b, carryin, sum, carryout);
-    a=1; b=1; carryin=0; #1000
-    $display("%b  %b  %b | %b 	%b  | 0 1", a, b, carryin, sum, carryout);
-    a=1; b=1; carryin=1; #1000
-    $display("%b  %b  %b | %b 	%b  | 1 1", a, b, carryin, sum, carryout);
+    $display(" a  |  b  |  S  S3 |  COut  |  OverFlow");
+    //for(i = -8; i < 8; i = i + 7)
+    //begin
+      //for(j = -8; j < 8; j = j + 1)
+      //begin
+
+    a = -8;
+    b = -8;
+    #1000
+    $display(" %d |  %d | %d   %b |    %b   |        %b ", $signed(a), $signed(b), $signed(sum), sum[3], carryout, overflow);
+    a = 7;
+    b = -8;
+    #1000
+    $display(" %d |  %d | %d   %b |    %b   |        %b ", $signed(a), $signed(b), $signed(sum), sum[3], carryout, overflow);
+    a = 7;
+    b = 7;
+    #1000
+    $display(" %d |  %d | %d   %b |    %b   |        %b ", $signed(a), $signed(b), $signed(sum), sum[3], carryout, overflow);
+    a = 5;
+    b = 2;
+    #1000
+    $display(" %d |  %d | %d   %b |    %b   |        %b ", $signed(a), $signed(b), $signed(sum), sum[3], carryout, overflow);
+    a = 5;
+    b = 3;
+    #1000
+    $display(" %d |  %d | %d   %b |    %b   |        %b ", $signed(a), $signed(b), $signed(sum), sum[3], carryout, overflow);
+    a = -5;
+    b = -3;
+    #1000
+    $display(" %d |  %d | %d   %b |    %b   |        %b ", $signed(a), $signed(b), $signed(sum), sum[3], carryout, overflow);
+    a = -5;
+    b = -4;
+    #1000
+    $display(" %d |  %d | %d   %b |    %b   |        %b ", $signed(a), $signed(b), $signed(sum), sum[3], carryout, overflow);
+
+      //end
+    //end
+
     end
 endmodule
