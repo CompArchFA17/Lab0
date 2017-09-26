@@ -3,7 +3,7 @@
 ### Changjun Lim, Sungwoo Park
 
 
-##### Waveform
+### Waveform
 
 ![Waveform image](images/lab0/waveform.png)
 
@@ -38,16 +38,16 @@ Note: Least significant binary digit has an index 0 in the variables.
 15. a=1110, b=1101
 16. a=1011, b=1110
 
-#####Result of test bench output
+### Result of test bench output
 
 ![test bench result](images/lab0/test_bench.png)
 
-##### Failed test cases
+### Failed test cases
 
 Our code passed all our initial test cases.
 
 
-##### Test Result on FPGA
+### Test Result on FPGA
 
 Following pictures are the documentation of our testing process for case 9 (1001 + 1110) using FPGA board.
 
