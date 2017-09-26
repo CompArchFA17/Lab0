@@ -26,13 +26,19 @@ module testFullAdder();
         $display("case with overflow and no carryout");
         a=4'b0101;b=4'b0011; #1000
         $display("%b  %b  %b  %b  %b  %b  %b  %b  | %b  %b  %b  %b  |        %b        %b", a[0], a[1], a[2], a[3], b[0], b[1], b[2], b[3], s[0], s[1], s[2], s[3], carryout, overflow);
+        a=4'b0111;b=4'b0110; #1000
+        $display("%b  %b  %b  %b  %b  %b  %b  %b  | %b  %b  %b  %b  |        %b        %b", a[0], a[1], a[2], a[3], b[0], b[1], b[2], b[3], s[0], s[1], s[2], s[3], carryout, overflow);
 
         $display("case with overflow and carrayout");
         a=4'b1001;b=4'b1110; #1000 
         $display("%b  %b  %b  %b  %b  %b  %b  %b  | %b  %b  %b  %b  |        %b        %b", a[0], a[1], a[2], a[3], b[0], b[1], b[2], b[3], s[0], s[1], s[2], s[3], carryout, overflow);
+        a=4'b1011;b=4'b1011; #1000 
+        $display("%b  %b  %b  %b  %b  %b  %b  %b  | %b  %b  %b  %b  |        %b        %b", a[0], a[1], a[2], a[3], b[0], b[1], b[2], b[3], s[0], s[1], s[2], s[3], carryout, overflow);
 
         $display("case with no overblow but carryout");
         a=4'b1101;b=4'b1011; #1000
+        $display("%b  %b  %b  %b  %b  %b  %b  %b  | %b  %b  %b  %b  |        %b        %b", a[0], a[1], a[2], a[3], b[0], b[1], b[2], b[3], s[0], s[1], s[2], s[3], carryout, overflow);
+        a=4'b1111;b=4'b1010; #1000
         $display("%b  %b  %b  %b  %b  %b  %b  %b  | %b  %b  %b  %b  |        %b        %b", a[0], a[1], a[2], a[3], b[0], b[1], b[2], b[3], s[0], s[1], s[2], s[3], carryout, overflow);
     end
 endmodule
