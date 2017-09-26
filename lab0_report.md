@@ -5,11 +5,22 @@
 
 ##### Waveform
 
+![Waveform image](images/lab0/waveform.png)
+
+
+Above figure shows the waveform of our adder going through few test cases. Notice that even though there are some glitches right after the inputs change, the sum output value stabilizes shortly after. 
+
+It seems like the worst delay occurs when the all bits of two input values changes, which results in change in individual sum bits and intermediate carry-in values between the adders.
 
 ##### Test case
+ We chose the following 16 test cases among the total 256 test cases. There are two interesting situations that are involved in this operation, namely overflow and carryout. We wanted to comprehensively test each possible scenario involving overflow and carryout. In order to do this, we grouped the test cases into 4 scenarios(whether there is an overflow or a carryout). We selected 4 test cases for each scenario.
 
-We choose the following 16 cases among total 256 cases.
- Since we group the cases into 4 s(overflow, carryout), We select 4 cases for each 
+ The test case 1~4 show the cases with no sum and carryout. The test case 5~8 are for the cases with overflow but no carryout. The test case 9~12 have only overflow and the test case 13-16 have both carryout and overflow. 
+
+Note: Least significant binary digit has an index 0 in the variables.
+
+(a: a[3], a[2], a[1], a[0],    b: b[3], b[2], b[1], b[0])
+
 (1) a=4'b0000;b=4'b0101;
 
 (2) a=4'b0011;b=4'b0001;
@@ -42,15 +53,18 @@ We choose the following 16 cases among total 256 cases.
 
 (16) a=4'b1011;b=4'b1110;
 
+#####Result of test bench output
 
+![test bench result](images/lab0/test_bench.png)
 
+##### Failed test cases
 
-There is no test case failure.
+Our code passed all our initial test cases.
 
 
 ##### Test Result on FPGA
 
-
+Following pictures are the documentation of our testing process for case 9 (1001 + 1110) using FPGA board.
 
 ![A input](https://raw.githubusercontent.com/SungwooPark/Lab0/master/images/lab0/A%20input.jpg)
 
