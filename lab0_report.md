@@ -1,12 +1,12 @@
-#Lab 0 Report
+# Lab 0 Report
 
-###Changjun Lim, Sungwoo Park
-
-
-#####Waveform
+### Changjun Lim, Sungwoo Park
 
 
-#####Test case
+##### Waveform
+
+
+##### Test case
 
 We choose the following 16 cases among total 256 cases.
  Since we group the cases into 4 s(overflow, carryout), We select 4 cases for each 
@@ -36,7 +36,7 @@ We choose the following 16 cases among total 256 cases.
 There is no test case failure.
 
 
-#####Test Result on FPGA
+##### Test Result on FPGA
 
 
 
