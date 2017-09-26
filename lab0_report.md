@@ -21,37 +21,22 @@ Note: Least significant binary digit has an index 0 in the variables.
 
 (a: a[3], a[2], a[1], a[0],    b: b[3], b[2], b[1], b[0])
 
-(1) a=4'b0000;b=4'b0101;
-
-(2) a=4'b0011;b=4'b0001;
-
-(3) a=4'b0100;b=4'b0011;
-
-(4) a=4'b0010;b=4'b0011;
-
-(5) a=4'b0101;b=4'b0011;
-
-(6) a=4'b0111;b=4'b0110;
-
-(7) a=4'b0111;b=4'b0111;
-
-(8) a=4'b0010;b=4'b0110;
-
-(9) a=4'b1001;b=4'b1110;
-
-(10) a=4'b1011;b=4'b1011;
-
-(11) a=4'b1000;b=4'b1100;
-
-(12) a=4'b1001;b=4'b1001;
-
-(13) a=4'b1101;b=4'b1011;
-
-(14) a=4'b1111;b=4'b1010;
-
-(15) a=4'b1110;b=4'b1101;
-
-(16) a=4'b1011;b=4'b1110;
+1. a=0000, b=0101
+2. a=0011, b=0001
+3. a=0100, b=0011
+4. a=0010, b=0011
+5. a=0101, b=0011
+6. a=0111, b=0110
+7. a=0111, b=0111
+8. a=0010, b=0110
+9. a=1001, b=1110
+10. a=1011, b=1011
+11. a=1000, b=1100
+12. a=1001, b=1001
+13. a=1101, b=1011
+14. a=1111, b=1010
+15. a=1110, b=1101
+16. a=1011, b=1110
 
 #####Result of test bench output
 
@@ -66,10 +51,14 @@ Our code passed all our initial test cases.
 
 Following pictures are the documentation of our testing process for case 9 (1001 + 1110) using FPGA board.
 
-![A input](https://raw.githubusercontent.com/SungwooPark/Lab0/master/images/lab0/A%20input.jpg)
+A input
+![A input](images/lab0/A%20input.jpg)
 
-![B input](https://raw.githubusercontent.com/SungwooPark/Lab0/master/images/lab0/B%20input.jpg)
+B input
+![B input](images/lab0/B%20input.jpg)
 
-![Sum output](https://raw.githubusercontent.com/SungwooPark/Lab0/master/images/lab0/Sum%20output.jpg)
+Sum output
+![Sum output](images/lab0/Sum%20output.jpg)
 
-![Carryout output](https://raw.githubusercontent.com/SungwooPark/Lab0/master/images/lab0/Carryout%20output.jpg)
+Carryout/overflow output
+![Carryout output](images/lab0/Carryout%20output.jpg)
