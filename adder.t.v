@@ -11,6 +11,8 @@ module testFullAdder();
     FullAdder4bit adder1 (sum, carryout, overflow, a, b);
 
     initial begin
+    $dumpfile("test.vcd");
+    $dumpvars(0,adder1);
     // Your test code here
     $display("   Inputs   |   Output  ");
     $display("a    b      | sum    carryout overflow ");
