@@ -50,5 +50,5 @@ module FullAdder4bit
     structuralFullAdder adder3 (sum[3], carryout, a[3], b[3], cout2);
 
     `XOR xorOVF (overflow, cout2, carryout);
-    
+
 endmodule
