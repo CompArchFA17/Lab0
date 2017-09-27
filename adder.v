@@ -3,7 +3,7 @@
 `define AND and #50
 `define OR or #50
 `define NOT not #50
-`define NAND nand #50
+`define XOR xor #50
 
 
 
@@ -62,8 +62,8 @@ module structuralFullAdder
     `AND(AB, a, b);
     `OR(carryout,BCin,ACin,AB);
 
-   XOR xor0(BxorCin,b,carryin);
-   XOR xor1(sum,a,BxorCin);
+   `XOR(BxorCin,b,carryin);
+   `XOR(sum,a,BxorCin);
 
 endmodule
 
@@ -86,6 +86,6 @@ module FullAdder4bit
     structuralFullAdder adder1(sum[1],C1,a[1],b[1],C0);
     structuralFullAdder adder2(sum[2],C2,a[2],b[2],C1);
     structuralFullAdder adder3(sum[3],carryout,a[3],b[3],C2);
-    `NAND(overflow,carryout,C2);
+    `XOR(overflow,carryout,C2);
 
 endmodule
