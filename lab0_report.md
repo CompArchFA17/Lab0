@@ -63,3 +63,13 @@ Sum output
 
 Carryout/overflow output
 ![Carryout output](images/lab0/Carryout%20output.jpg)
+
+The summary statistics from Vivado.
+Power
+![Power](images/lab0/power.png)
+
+Timing
+![Timing](images/lab0/timing.png)
+
+Uitilization
+![Uitilization](images/lab0/Uitilization.png)
