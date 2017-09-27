@@ -50,13 +50,14 @@ module testFullAdder4bit();
     $display("0+-4 (0000+1100)| %b | %b |  1100     %b  |  %b    %b", a, b, sum, carryout, overflow);
     a= 4'b0000; b=4'b1000; #1000
     $display("0+-8 (0000+1000)| %b | %b |  1000     %b  |  %b    %b", a, b, sum, carryout, overflow);
-    $display("Testing Carryouts");
+    $display("Testing Internal Carryouts");
     a= 4'b0001; b=4'b0001; #1000
     $display(" 1+1 (0001+0001)| %b | %b |  0010     %b  |  %b    %b", a, b, sum, carryout, overflow);
-    a= 4'b1111; b=4'b1111; #1000
-    $display("-1-1 (1111+1111)| %b | %b |  1110     %b  |  %b    %b", a, b, sum, carryout, overflow);
     a= 4'b0010; b=4'b0010; #1000
     $display(" 2+2 (0010+0010)| %b | %b |  0100     %b  |  %b    %b", a, b, sum, carryout, overflow);
+    $display("Testing External Carryout");
+    a= 4'b1111; b=4'b1111; #1000
+    $display("-1-1 (1111+1111)| %b | %b |  1110     %b  |  %b    %b", a, b, sum, carryout, overflow);
     a= 4'b1110; b=4'b1110; #1000
     $display("-2-2 (1110+1110)| %b | %b |  1100     %b  |  %b    %b", a, b, sum, carryout, overflow);
     a= 4'b1100; b=4'b1100; #1000
