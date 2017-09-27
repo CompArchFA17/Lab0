@@ -69,7 +69,7 @@ Power
 ![Power](images/lab0/power.png)
 
 Timing
-![Timing](images/lab0/timing.png)
+![Timing](images/lab0/Timing.png)
 
-Uitilization
-![Uitilization](images/lab0/Uitilization.png)
+Utilization
+![Utilization](images/lab0/Utilization.png)
