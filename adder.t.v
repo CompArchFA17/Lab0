@@ -71,7 +71,8 @@ module testFullAdder();
     a='b1000;b='b1100; #50
     $display("%b %b   | %b   %b        %b ", a, b, sum, carryout, overflow);
 
-
+    a='b1100;b='b1100; #50
+    $display("%b %b   | %b   %b        %b ", a, b, sum, carryout, overflow);
 
 
 
