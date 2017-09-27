@@ -16,7 +16,12 @@ module FullAdder4bit_test();
     input [3:0] a, b, expectedOut, expectedOverflow;
     begin
       A=a; B=b; #500
-      $display("some test logic");
+      if (sum == expectedOut && overflow == expectedOverflow)
+        $display("Test succeeded");
+      else if (sum == expectedOut && overflow)
+        $display("Output matches, unexpected overflow for inputs %b and %b", a, b);
+      else
+        $display("Expected %b for inputs %b and %b, got %b.", expectedOut, a, b, sum);
     end
   endtask
 
