@@ -13,14 +13,17 @@ module FullAdder4bit
 );
     wire carry1, carry2, carry3;
     wire finalbit, c;
+    // add the first bit with no carryin
     oneBitAdder first (sum[0], carry1, a[0], b[0], 0);
+    // add second bit with carryout of first bit as carryin
     oneBitAdder second (sum[1], carry2, a[1], b[1], carry1);
-    oneBitAdder third (sum[2], carry3, a[2], b[2], carry2);
+    oneBitAdder third (sum[2], carry3, a[2], b[2], carry2); // repeat
     oneBitAdder fourth (sum[3], carryout, a[3], b[3], carry3);
     
     wire samesign, samecarry;
-    `XNOR signtest(samesign, a[3], b[3]);
-    `XOR carrytest(samecarry, carryout, sum[3]);
+    `XNOR signtest(samesign, a[3], b[3]); // test if inputs have same sign
+    `XOR carrytest(samecarry, carryout, sum[3]); // test if carryout=signbit
+    // overflow if signs are equal and carryout != signbit
     `AND overflowtest(overflow, samesign, samecarry);
 
 endmodule

@@ -13,13 +13,16 @@ module oneBitAdder
     input carryin
 );
     wire ab;
-    `AND aANDb(ab, a, b);
     wire bc;
     wire ac;
+    // and together pairs of the three inputs
+    `AND aANDb(ab, a, b);
     `AND bANDc(bc, b, carryin);
     `AND aANDc(ac, a, carryin);
 
+    // if any set of two is true, there is a carryout
     `OR cout(carryout, ab, bc, ac);
+    // the sum is just the three inputs XORed
     `XOR sumout(sum, a, b, carryin);
     
 endmodule
