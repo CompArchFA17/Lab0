@@ -21,7 +21,7 @@ Note: Least significant binary digit has an index 0 in the variables.
 
 (a: a[3],a[2],a[1],a[0],    b: b[3],b[2],b[1],b[0],  s: s[3],s[2],s[1],s[0])
 
-  &nbsp;&nbsp;&nbsp;&nbsp; Input value &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /  Expected result
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Input value &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /  Expected result
 1. a=0000, b=0101  /  sum=0101  carryout=0  overflow=0
 2. a=0011, b=0001  /  sum=0100  carryout=0  overflow=0
 3. a=0100, b=0011  /  sum=0111  carryout=0  overflow=0
@@ -64,13 +64,16 @@ Sum output
 Carryout/overflow output
 ![Carryout output](images/lab0/Carryout%20output.jpg)
 
-The summary statistics from Vivado.
+### The summary statistics from Vivado.
+
+Following pictures are the summary statistics of our circuit in FPGA. The circuit in this lab is so small that it uses only little part of power(2% and 1% for signals and logi, respectively) and uilization(0.03% for LUT and FF). And the timing is not measured because we constructed the combinational circuit without clock.
 
 Power
 ![Power](images/lab0/power.png)
 
+Utilization
+![Utilization](images/lab0/Utilization.png)
+
 Timing
 ![Timing](images/lab0/Timing.png)
 
-Utilization
-![Utilization](images/lab0/Utilization.png)
