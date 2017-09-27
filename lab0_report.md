@@ -21,7 +21,7 @@ Note: Least significant binary digit has an index 0 in the variables.
 
 (a: a[3],a[2],a[1],a[0],    b: b[3],b[2],b[1],b[0],  s: s[3],s[2],s[1],s[0])
 
-   Input value     /  Expected result
+   Input value   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /  Expected result
 1. a=0000, b=0101  /  sum=0101  carryout=0  overflow=0
 2. a=0011, b=0001  /  sum=0100  carryout=0  overflow=0
 3. a=0100, b=0011  /  sum=0111  carryout=0  overflow=0
