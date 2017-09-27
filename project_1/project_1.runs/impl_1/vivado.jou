@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Wed Sep 27 19:11:40 2017
+# Process ID: 25068
+# Current directory: /home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/impl_1
+# Command line: vivado -log hw_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source hw_wrapper.tcl -notrace
+# Log file: /home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/impl_1/hw_wrapper.vdi
+# Journal file: /home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source hw_wrapper.tcl -notrace

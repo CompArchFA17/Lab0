@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Wed Sep 27 18:56:37 2017
+# Process ID: 7822
+# Current directory: /home/jspear/Development/School/Comp_Arc/Lab0
+# Command line: vivado
+# Log file: /home/jspear/Development/School/Comp_Arc/Lab0/vivado.log
+# Journal file: /home/jspear/Development/School/Comp_Arc/Lab0/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/jspear/Development/School/Comp_Arc/Lab0/project_1 -part xc7z010clg400-1
+add_files -fileset constrs_1 -norecurse /home/jspear/Development/School/Comp_Arc/Lab0/ZYBO_Master.xdc
+add_files -norecurse /home/jspear/Development/School/Comp_Arc/Lab0/project_1/example.v
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+open_hw
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/impl_1/hw_wrapper.bit} [get_hw_devices xc7z010_1]
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/impl_1/hw_wrapper.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
