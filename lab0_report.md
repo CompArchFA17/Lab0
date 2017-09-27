@@ -65,6 +65,7 @@ Carryout/overflow output
 ![Carryout output](images/lab0/Carryout%20output.jpg)
 
 The summary statistics from Vivado.
+
 Power
 ![Power](images/lab0/power.png)
 
