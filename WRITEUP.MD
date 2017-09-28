@@ -48,6 +48,75 @@ This is the worst case gate delay we simulated. Visible is the overflow stabiliz
 ## Test Bench
 In writing our test bench, we decided to cover a few different types of adder case. These were as follows:
 
+```
+Test Case       |  A   |  B   | Expected Actual | Cout OVF
+
+Zero Cases
+1+0  (0001+0000)| 0001 | 0000 |  0001     0001  |  0    0
+2+0  (0010+0000)| 0010 | 0000 |  0010     0010  |  0    0
+4+0  (0100+0000)| 0100 | 0000 |  0100     0100  |  0    0
+-1+0 (1111+0000)| 1111 | 0000 |  1111     1111  |  0    0
+-2+0 (1110+0000)| 1110 | 0000 |  1110     1110  |  0    0
+-4+0 (1100+0000)| 1100 | 0000 |  1100     1100  |  0    0
+-2+0 (1000+0000)| 1000 | 0000 |  1000     1000  |  0    0
+ 7+0 (0111+0000)| 0111 | 0000 |  0111     0111  |  0    0
+ 0+0 (0000+0000)| 0000 | 0000 |  0000     0000  |  0    0
+
+Mirrored Zero Cases
+ 0+1 (0000+0001)| 0000 | 0001 |  0001     0001  |  0    0
+ 0+2 (0000+0010)| 0000 | 0010 |  0010     0010  |  0    0
+ 0+4 (0000+0100)| 0000 | 0100 |  0100     0100  |  0    0
+ 0+7 (0000+0111)| 0000 | 0111 |  0111     0111  |  0    0
+0+-1 (0000+1111)| 0000 | 1111 |  1111     1111  |  0    0
+0+-2 (0000+1110)| 0000 | 1110 |  1110     1110  |  0    0
+0+-4 (0000+1100)| 0000 | 1100 |  1100     1100  |  0    0
+0+-8 (0000+1000)| 0000 | 1000 |  1000     1000  |  0    0
+```
+
+First, we covered cases in which one input is zero and the other non-zero, to verify that each bit of each input is working and being passed through correctly to output.
+
+```
+Testing Internal Carryouts
+ 1+1 (0001+0001)| 0001 | 0001 |  0010     0010  |  0    0
+ 2+2 (0010+0010)| 0010 | 0010 |  0100     0100  |  0    0
+
+Testing External Carryout
+-1-1 (1111+1111)| 1111 | 1111 |  1110     1110  |  1    0
+-2-2 (1110+1110)| 1110 | 1110 |  1100     1100  |  1    0
+-4-4 (1100+1100)| 1100 | 1100 |  1000     1000  |  1    0
+```
+
+We wrote cases to test the functionality of the internal and external carryout wires on a mostly-individual basis (there's no 4+4 case, but that carryout should be covered by the -4-4 case).
+
+```
+Test Overflows
+4+4  (0100+0100)| 0100 | 0100 |  1000     1000  |  0    1
+7+7  (0111+0111)| 0111 | 0111 |  1110     1110  |  0    1
+-8-8 (1000+1000)| 1000 | 1000 |  0000     0000  |  1    1
+ 5+4 (0101+0100)| 0101 | 0100 |  1001     1001  |  0    1
+-5-4 (1011+1100)| 1011 | 1100 |  0111     0111  |  1    1
+```
+
+To test our OVF bit, we wrote a few cases that intentionally overflow, in both the positive and negative direction.
+
+```
+Regular Cases
+1+2  (0001+0010)| 0001 | 0010 |  0011     0011  |  0    0
+2+3  (0010+0011)| 0010 | 0011 |  0101     0101  |  0    0
+3+4  (0011+0100)| 0011 | 0100 |  0111     0111  |  0    0
+1+-2 (0001+1110)| 0001 | 1110 |  1111     1111  |  0    0
+-2-4 (1110+1100)| 1110 | 1100 |  1010     1010  |  1    0
+2+-4 (0010+1100)| 0010 | 1100 |  1110     1110  |  0    0
+-5+7 (1011+0111)| 1011 | 0111 |  0010     0010  |  1    0
+```
+
+We rounded out the tests with a selection of regular, non-overflow cases, including additions of positive and negative numbers that result in a sign-flip.
+
+```
+Worst Case Delay
+-1+1 (1111+0001)| 1111 | 0001 |  0000     0000  |  1    0
+```
+Finally, we attempted to test the worst case delay, by doing a calculation that results in the first bit carryout propogating all the way to the final carryout bit.
 
 ## Implementation on FPGA
 
