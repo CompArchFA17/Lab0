@@ -10,6 +10,15 @@ At first we had a faulty way of checking for overflow, which caused us to often 
 
 # FPGA
 After fighting with Vivado for a while we were able to successfully upload the bitstream to the device. After that we tested the sum and flags by cycling through values on the FPGA and found that everything was operating as it was supposed to.
+## Timing
+![timing](https://github.com/TShapinsky/Lab0/blob/master/Timing.png?raw=true)
+## Power
+![Power](https://github.com/TShapinsky/Lab0/blob/master/Power.png?raw=true)
+## Utilization
+![utilization](https://github.com/TShapinsky/Lab0/blob/master/Utilization.png?raw=true)
+## DRC
+![DRC](https://github.com/TShapinsky/Lab0/blob/master/DRC.png?raw=true)
+
 
 # Waveforms
 
