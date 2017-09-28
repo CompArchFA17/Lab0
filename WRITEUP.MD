@@ -17,7 +17,9 @@ Each of these full-adders has the following delay characteristics (assuming AND 
  S | 2 | 1
  Cout | 3 |  2
 
-These modules are then chained together as in the following diagram:
+## Four Bit Adder
+
+To make a 4 bit adder, these modules are then chained together as in the following diagram:
 
 <img src="4_bit_adder_schematic.png" alt="four_bit_adder" style="width:300px;"/>
 
@@ -36,6 +38,8 @@ Cout | 8 | 9 | 7 | 5 | 3
 OVF | 9 | 10 | 8 | 6 | 4
 
 So, the worst case here is that the overflow bit takes 10 unit gate delays to stabilize if it's affected by the least significant bits of the operands.
+
+## Timing Waveforms
 
 The operation that we used to show the worst-case delay (passing through all of the carry-outs from the LSB of each operand) was -1 + 1, which renders as `F` + `1` in GTKWave (`b1111` + `b0001`).
 
@@ -140,4 +144,4 @@ Our FPGA behaved spectacularly!
 
 After our design was synthesized, it ended up using 8 look-up tables, 9 flipflops, 13 IO devices and 1 `BUFG`, which we found out was a global clock buffer.
 
-The IO numbers correspond to the twelve devices we instatiated (four buttons, four switches, and four LEDs on ouput pins), and apparently one extra, which we think might have come from the USB connection or a status LED, we're not sure. The LUTs are not surprising, as we saw that a half-adder can be implemented with a single LUT, and therefore 4 full adders would require 8. We conjecture that the 9 flipflops would be accounted for by the 8 inputs, `a[3..0]` and `b[3..0]`, and the final one might be the `0` input to the first full adder's carry-in. 
+The IO numbers correspond to the twelve devices we instatiated (four buttons, four switches, and four LEDs on ouput pins), and apparently one extra, which we think might have come from the USB connection or a status LED, we're not sure. The LUTs are not surprising, as we saw that a half-adder can be implemented with a single LUT, and therefore 4 full adders would require 8. We conjecture that the 9 flipflops would be accounted for by the 8 inputs, `a[3..0]` and `b[3..0]`, and the final one might be the `0` input to the first full adder's carry-in.
