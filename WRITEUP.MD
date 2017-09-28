@@ -118,10 +118,26 @@ Worst Case Delay
 ```
 Finally, we attempted to test the worst case delay, by doing a calculation that results in the first bit carryout propogating all the way to the final carryout bit.
 
+## Test Case Failures
+While it seems unlikely, the only two failures we encountered during our test bench simulation were due to typos in our test bench display lines. Two plus three is five, not six.
+
 ## Implementation on FPGA
+![FPGA](tested-cases.jpg)
+
 After we were convinced that our 4-bit adder code worked, we synthesized it and implemented it on our FPGA dev kit. We selected the following test cases for our manual testing, which we compared against our test bench results to ensure that it was behaving properly.
 
 <img src="manual_test_cases.png" alt="manual_test_cases" style="width:500px;"/>
-We selected some cases where the sign was the same and different, where there were zeros, where there were internal carries, where there were carryout bits, and where there were overflows. 
+
+We selected some cases where the sign was the same and different, where there were zeros, where there were internal carries, where there were carryout bits, and where there were overflows.
+
+![five_plus_four](five_four_ovf.gif)
+
+Our FPGA behaved spectacularly!
 
 ## Synthesis Statistics
+
+![summary_stats](vivado_summary_stats.png)
+
+After our design was synthesized, it ended up using 8 look-up tables, 9 flipflops, 13 IO devices and 1 `BUFG`, which we found out was a global clock buffer.
+
+The IO numbers correspond to the twelve devices we instatiated (four buttons, four switches, and four LEDs on ouput pins), and apparently one extra, which we think might have come from the USB connection or a status LED, we're not sure. The LUTs are not surprising, as we saw that a half-adder can be implemented with a single LUT, and therefore 4 full adders would require 8. We conjecture that the 9 flipflops would be accounted for by the 8 inputs, `a[3..0]` and `b[3..0]`, and the final one might be the `0` input to the first full adder's carry-in. 
