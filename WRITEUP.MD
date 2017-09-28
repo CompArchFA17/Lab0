@@ -50,5 +50,9 @@ In writing our test bench, we decided to cover a few different types of adder ca
 
 
 ## Implementation on FPGA
+After we were convinced that our 4-bit adder code worked, we synthesized it and implemented it on our FPGA dev kit. We selected the following test cases for our manual testing, which we compared against our test bench results to ensure that it was behaving properly.
+
+<img src="manual_test_cases.png" alt="manual_test_cases" style="width:500px;"/>
+We selected some cases where the sign was the same and different, where there were zeros, where there were internal carries, where there were carryout bits, and where there were overflows. 
 
 ## Synthesis Statistics
