@@ -6,7 +6,7 @@
 `define OR or #50
 `define NOT not #50
 
-module FullAdder1bit
+module FullAdder1Bit
 (
     output sum,
     output carryout,
@@ -34,7 +34,7 @@ module HalfAdder
     input a,
     input b
 );
-    FullAdder1bit adder (sum, carryout, a, b, 0);
+    FullAdder1Bit adder (sum, carryout, a, b, 0);
 endmodule
 
 module FullAdder4bit
@@ -47,9 +47,9 @@ module FullAdder4bit
 );
     wire Cout0, Cout1, Cout2;
     HalfAdder ha0 (sum[0], Cout0, a[0], b[0]);
-    FullAdder1bit fa1 (sum[1], Cout1, a[1], b[1], Cout0);
-    FullAdder1bit fa2 (sum[2], Cout2, a[2], b[2], Cout1);
-    FullAdder1bit fa3 (sum[3], carryout, a[3], b[3], Cout2);
+    FullAdder1Bit fa1 (sum[1], Cout1, a[1], b[1], Cout0);
+    FullAdder1Bit fa2 (sum[2], Cout2, a[2], b[2], Cout1);
+    FullAdder1Bit fa3 (sum[3], carryout, a[3], b[3], Cout2);
     `XOR computeOverflow (overflow, carryout, Cout2);
 
 endmodule
