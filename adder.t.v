@@ -38,7 +38,7 @@ module FullAdder4bit_test();
     testAVals[7] = 4'b1100; testBVals[7] = 4'b1100; outputs[7] = 4'b1000; overflows[7] = 0;
     testAVals[8] = 4'b1101; testBVals[8] = 4'b0101; outputs[8] = 4'b0010; overflows[8] = 0;
     testAVals[9] = 4'b0001; testBVals[9] = 4'b1010; outputs[9] = 4'b1011; overflows[9] = 0;
-    testAVals[10] = 4'b0000; testBVals[10] = 4'b0110; outputs[10] = 4'b0110; overflows[10] = 0;
+    testAVals[10] = 4'b0001; testBVals[10] = 4'b0110; outputs[10] = 4'b0111; overflows[10] = 0;
     testAVals[11] = 4'b0000; testBVals[11] = 4'b1100; outputs[11] = 4'b1100; overflows[11] = 0;
     testAVals[12] = 4'b0010; testBVals[12] = 4'b0000; outputs[12] = 4'b0010; overflows[12] = 0;
     testAVals[13] = 4'b1110; testBVals[13] = 4'b0000; outputs[13] = 4'b1110; overflows[13] = 0;
