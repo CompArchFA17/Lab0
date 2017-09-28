@@ -8,7 +8,7 @@ In this lab exercise, we used Alex's full adder implementation from HW2 to make 
 ## Full Adder Behavior
 Our full adder is made up of four chained-together full adder modules, each of which is was designed like the following:
 
-![full-adder]()
+<img src="full_adder_schematic.png" alt="full_adder" style="width:400px;"/>
 
 Each of these full-adders has the following delay characteristics (assuming AND and XOR have the same unit gate delay, in our case 50 ns).
 
@@ -19,7 +19,7 @@ Each of these full-adders has the following delay characteristics (assuming AND 
 
 These modules are then chained together as in the following diagram:
 
-![four_bit_adder]()
+<img src="4_bit_adder_schematic.png" alt="four_bit_adder" style="width:300px;"/>
 
 When chained together, they have the following delay characteristics (in gate delay units):
 
