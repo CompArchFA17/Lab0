@@ -2,14 +2,12 @@
 `include "adder.v"
 
 module test4BitFullAdder();
-  reg[3:0] a;
-	reg[3:0] b;
-	wire[3:0] sum;
-  wire carryout;
-  wire carryout2;
-	wire overflow;
-  //integer i;
-  //integer j;
+	reg[3:0] a; //Bus for a registers.
+	reg[3:0] b; //Bus for b registers.
+	wire[3:0] sum; //Bus for the individual sums.
+	wire carryout; //final carryout wire.
+	wire carryout2;
+	wire overflow; //Overflow wire.
 
 	FullAdder4bit adder(sum, carryout, carryout2, overflow, a, b);
 
@@ -18,14 +16,10 @@ module test4BitFullAdder();
   	$dumpvars(0, a[3:0], b[3:0], sum[3:0], carryout, carryout2, overflow);
 
     $display(" a  |  b  |  S  C2 |  COut  |  OverFlow");
-    //for(i = -8; i < 8; i = i + 7)
-    //begin
-      //for(j = -8; j < 8; j = j + 1)
-      //begin
 
-    a = -8;
-    b = -8;
-    #1000
+    a = -8; //Set a register.
+    b = -8; //Set b register.
+    #1000 //Delay.
     $display(" %d |  %d | %d   %b |    %b   |        %b ", $signed(a), $signed(b), $signed(sum), carryout2, carryout, overflow);
     a = 7;
     b = -8;
