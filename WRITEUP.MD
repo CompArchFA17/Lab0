@@ -43,10 +43,10 @@ So, the worst case here is that the overflow bit takes 10 unit gate delays to st
 
 The operation that we used to show the worst-case delay (passing through all of the carry-outs from the LSB of each operand) was -1 + 1, which renders as `F` + `1` in GTKWave (`b1111` + `b0001`).
 
-![all_gate_delays](all_gate_delays.png)
+![all_gate_delays](all_gate_delays.PNG)
 This is the waveform for our entire test bench.
 
-![worst_case_delay](worst_case_gate_delay.png)
+![worst_case_delay](worst_case_gate_delay.PNG)
 This is the worst case gate delay we simulated. Visible is the overflow stabilizing at the very end of the propagation chain.
 
 ## Test Bench
@@ -140,7 +140,7 @@ Our FPGA behaved spectacularly!
 
 ## Synthesis Statistics
 
-![summary_stats](vivado_summary_stats.png)
+![summary_stats](vivado_summary_stats.PNG)
 
 After our design was synthesized, it ended up using 8 look-up tables, 9 flipflops, 13 IO devices and 1 `BUFG`, which we found out was a global clock buffer.
 
