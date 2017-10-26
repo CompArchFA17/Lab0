@@ -163,3 +163,6 @@ ERROR: [Common 17-69] Command failed: report_utilization can be run only after s
 launch_runs impl_1 -jobs 2
 [Wed Sep 27 19:50:15 2017] Launched impl_1...
 Run output will be captured here: /home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/impl_1/runme.log
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210279651540A
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 28 09:33:15 2017...
