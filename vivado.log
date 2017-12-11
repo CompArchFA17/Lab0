@@ -1,0 +1,168 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Wed Sep 27 19:25:10 2017
+# Process ID: 8659
+# Current directory: /home/jspear/Development/School/Comp_Arc/Lab0
+# Command line: vivado
+# Log file: /home/jspear/Development/School/Comp_Arc/Lab0/vivado.log
+# Journal file: /home/jspear/Development/School/Comp_Arc/Lab0/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2017.2/data/ip'.
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+WARNING: [HDL 9-687] Illegal redeclaration of module <FullAdder1Bit>. [adder.v:9]
+WARNING: [HDL 9-687] Illegal redeclaration of module <HalfAdder>. [adder.v:30]
+WARNING: [HDL 9-687] Illegal redeclaration of module <FullAdder4bit>. [adder.v:40]
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'FullAdder1Bit()' found in library 'xil_defaultlib'
+Duplicate found at line 9 of file /home/jspear/Development/School/Comp_Arc/Lab0/adder.v
+Duplicate found at line 9 of file /home/jspear/Development/School/Comp_Arc/Lab0/lab0_wrapper.v
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'HalfAdder()' found in library 'xil_defaultlib'
+Duplicate found at line 30 of file /home/jspear/Development/School/Comp_Arc/Lab0/adder.v
+Duplicate found at line 30 of file /home/jspear/Development/School/Comp_Arc/Lab0/lab0_wrapper.v
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'FullAdder4bit()' found in library 'xil_defaultlib'
+Duplicate found at line 40 of file /home/jspear/Development/School/Comp_Arc/Lab0/adder.v
+Duplicate found at line 40 of file /home/jspear/Development/School/Comp_Arc/Lab0/lab0_wrapper.v
+[Wed Sep 27 19:26:07 2017] Launched synth_1...
+Run output will be captured here: /home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+[Wed Sep 27 19:26:41 2017] Launched impl_1...
+Run output will be captured here: /home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -jobs 2
+[Wed Sep 27 19:28:06 2017] Launched synth_1...
+Run output will be captured here: /home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/synth_1/runme.log
+[Wed Sep 27 19:28:06 2017] Launched impl_1...
+Run output will be captured here: /home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Wed Sep 27 19:29:13 2017] Launched impl_1...
+Run output will be captured here: /home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : Jun 15 2017-18:45:18
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210279651540A
+set_property PROGRAM.FILE {/home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/impl_1/lab0_wrapper.bit} [get_hw_devices xc7z010_1]
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {/home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/impl_1/lab0_wrapper.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+report_utilization
+ERROR: [Common 17-53] User Exception: No open design. Please open an elaborated, synthesized or implemented design before executing this command.
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z010clg400-1
+Top: lab0_wrapper
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module FullAdder1Bit [adder.v:9]
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module HalfAdder [adder.v:30]
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module FullAdder4bit [adder.v:40]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 6238.406 ; gain = 51.602 ; free physical = 8439 ; free virtual = 20012
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'lab0_wrapper' [/home/jspear/Development/School/Comp_Arc/Lab0/lab0_wrapper.v:95]
+INFO: [Synth 8-638] synthesizing module 'dff' [/home/jspear/Development/School/Comp_Arc/Lab0/lab0_wrapper.v:37]
+	Parameter W bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'dff' (1#1) [/home/jspear/Development/School/Comp_Arc/Lab0/lab0_wrapper.v:37]
+INFO: [Synth 8-638] synthesizing module 'jkff1' [/home/jspear/Development/School/Comp_Arc/Lab0/lab0_wrapper.v:52]
+INFO: [Synth 8-256] done synthesizing module 'jkff1' (2#1) [/home/jspear/Development/School/Comp_Arc/Lab0/lab0_wrapper.v:52]
+INFO: [Synth 8-638] synthesizing module 'mux2' [/home/jspear/Development/School/Comp_Arc/Lab0/lab0_wrapper.v:73]
+	Parameter W bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mux2' (3#1) [/home/jspear/Development/School/Comp_Arc/Lab0/lab0_wrapper.v:73]
+INFO: [Synth 8-638] synthesizing module 'FullAdder4bit' [/home/jspear/Development/School/Comp_Arc/Lab0/adder.v:40]
+INFO: [Synth 8-638] synthesizing module 'HalfAdder' [/home/jspear/Development/School/Comp_Arc/Lab0/adder.v:30]
+INFO: [Synth 8-638] synthesizing module 'FullAdder1Bit' [/home/jspear/Development/School/Comp_Arc/Lab0/adder.v:9]
+INFO: [Synth 8-256] done synthesizing module 'FullAdder1Bit' (4#1) [/home/jspear/Development/School/Comp_Arc/Lab0/adder.v:9]
+INFO: [Synth 8-256] done synthesizing module 'HalfAdder' (5#1) [/home/jspear/Development/School/Comp_Arc/Lab0/adder.v:30]
+INFO: [Synth 8-256] done synthesizing module 'FullAdder4bit' (6#1) [/home/jspear/Development/School/Comp_Arc/Lab0/adder.v:40]
+INFO: [Synth 8-256] done synthesizing module 'lab0_wrapper' (7#1) [/home/jspear/Development/School/Comp_Arc/Lab0/lab0_wrapper.v:95]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 6269.664 ; gain = 82.859 ; free physical = 8452 ; free virtual = 20026
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 6269.664 ; gain = 82.859 ; free physical = 8453 ; free virtual = 20026
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/jspear/Development/School/Comp_Arc/Lab0/ZYBO_Master.xdc]
+Finished Parsing XDC File [/home/jspear/Development/School/Comp_Arc/Lab0/ZYBO_Master.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 6625.734 ; gain = 438.930 ; free physical = 8154 ; free virtual = 19732
+18 Infos, 0 Warnings, 3 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 6625.734 ; gain = 438.930 ; free physical = 8154 ; free virtual = 19732
+report_utilization
+ERROR: [Common 17-69] Command failed: report_utilization can be run only after synthesis has successfully completed.
+
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+WARNING: [HDL 9-687] Illegal redeclaration of module <FullAdder1Bit>. [adder.v:9]
+WARNING: [HDL 9-687] Illegal redeclaration of module <HalfAdder>. [adder.v:30]
+WARNING: [HDL 9-687] Illegal redeclaration of module <FullAdder4bit>. [adder.v:40]
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'FullAdder1Bit()' found in library 'xil_defaultlib'
+Duplicate found at line 9 of file /home/jspear/Development/School/Comp_Arc/Lab0/adder.v
+Duplicate found at line 9 of file /home/jspear/Development/School/Comp_Arc/Lab0/lab0_wrapper.v
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'HalfAdder()' found in library 'xil_defaultlib'
+Duplicate found at line 30 of file /home/jspear/Development/School/Comp_Arc/Lab0/adder.v
+Duplicate found at line 30 of file /home/jspear/Development/School/Comp_Arc/Lab0/lab0_wrapper.v
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'FullAdder4bit()' found in library 'xil_defaultlib'
+Duplicate found at line 40 of file /home/jspear/Development/School/Comp_Arc/Lab0/adder.v
+Duplicate found at line 40 of file /home/jspear/Development/School/Comp_Arc/Lab0/lab0_wrapper.v
+[Wed Sep 27 19:47:13 2017] Launched synth_1...
+Run output will be captured here: /home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/synth_1/runme.log
+report_utilization
+ERROR: [Common 17-69] Command failed: report_utilization can be run only after synthesis has successfully completed.
+
+launch_runs impl_1 -jobs 2
+[Wed Sep 27 19:50:15 2017] Launched impl_1...
+Run output will be captured here: /home/jspear/Development/School/Comp_Arc/Lab0/project_1/project_1.runs/impl_1/runme.log
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210279651540A
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 28 09:33:15 2017...
